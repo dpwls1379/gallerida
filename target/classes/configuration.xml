@@ -7,11 +7,13 @@
 		<typeAlias alias="member" type="gallerida.model.Member" />
 		<typeAlias alias="product" type="gallerida.model.Product" />
 		<typeAlias alias="boardo" type="gallerida.model.Boardo" />
+		<typeAlias alias="boardo" type="gallerida.model.Boardx" />
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="Member.xml" />
 		<mapper resource="Boardo.xml" />
+		<mapper resource="Boardx.xml" />
 		<mapper resource="Product.xml" />
 	</mappers>
 	
