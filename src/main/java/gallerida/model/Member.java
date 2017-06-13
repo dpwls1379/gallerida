@@ -2,7 +2,7 @@ package gallerida.model;
 
 import java.sql.Date;    
 
-public class Member {
+public class Member{
 	     
 	private String id;
 	private String pass;
