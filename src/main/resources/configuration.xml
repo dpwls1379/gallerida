@@ -6,10 +6,12 @@
 	<typeAliases>
 		<typeAlias alias="member" type="gallerida.model.Member" />
 		<typeAlias alias="product" type="gallerida.model.Product" />
+		<typeAlias alias="boardo" type="gallerida.model.Boardo" />
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="Member.xml" />
+		<mapper resource="Boardo.xml" />
 		<mapper resource="Product.xml" />
 	</mappers>
 	
