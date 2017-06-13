@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="productns">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="productResult" type="product">
+		<result property="pro_num" column="pro_num" />
+		<result property="pro_cate" column="pro_cate" />
+		<result property="pro_name" column="pro_name" />
+		<result property="pro_price" column="pro_price" />
+		<result property="pro_sale" column="pro_sale" />
+		<result property="pro_info" column="pro_info" />
+		<result property="pro_image" column="pro_image" />
+		<result property="pro_date" column="pro_date" />
+		<result property="pro_count" column="pro_count" />
+		<result property="pro_cell" column="pro_cell" />
+	</resultMap>
+	
+	
+</mapper>
