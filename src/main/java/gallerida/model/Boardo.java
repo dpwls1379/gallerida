@@ -14,6 +14,8 @@ public class Boardo {
 	private int bo_read;
 	private int bo_star;
 	private String bo_del;
+	
+	
 	public int getBo_num() {
 		return bo_num;
 	}
