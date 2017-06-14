@@ -9,6 +9,7 @@
 		<typeAlias alias="boardo" type="gallerida.model.Boardo" />
 		<typeAlias alias="boardx" type="gallerida.model.Boardx" />
 		<typeAlias alias="cart" type="gallerida.model.Cart" />
+		<typeAlias alias="buy" type="gallerida.model.Buy" />
 	</typeAliases>
 	
 	<mappers>
@@ -17,6 +18,7 @@
 		<mapper resource="Boardx.xml" />
 		<mapper resource="Product.xml" />
 		<mapper resource="Cart.xml" />
+		<mapper resource="Buy.xml" />
 	</mappers>
 	
 </configuration>

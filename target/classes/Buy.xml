@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberns">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="memberResult" type="member">
+		<result property="id" column="id" />
+		<result property="pass" column="pass" />
+		<result property="name" column="name" />
+		<result property="addr" column="addr" />
+		<result property="tel" column="tel" />
+		<result property="email" column="email" />
+		<result property="gender" column="gender" />
+		<result property="birthday" column="birthday"/>
+	</resultMap>
+	
+	
+</mapper>
