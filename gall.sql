@@ -71,11 +71,15 @@ bx_num 			number 			references Gboardx(bx_num)
 
 create table Gcart (
 ct_num 		number 			primary key,
+id			varchar2(20)	references Gmember(id)
 ct_image 	varchar2(30) 	default 'default.jpg',
 ct_count	number 			default 0,
 ct_del 		char(1) 		default 'n',
 pro_num 	number 			references Gproduct(pro_num)
 );
+
+alter table Gcart add (id varchar2(20) references Gmember(id));
+
 
 create table Gbuy (
 buy_num 	number 			primary key,
