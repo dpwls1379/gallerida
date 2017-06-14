@@ -13,7 +13,7 @@
 		<result property="pro_image" column="pro_image" />
 		<result property="pro_date" column="pro_date" />
 		<result property="pro_count" column="pro_count" />
-		<result property="pro_cell" column="pro_cell" />
+		<result property="pro_sell" column="pro_sell" />
 	</resultMap>
 	
 	

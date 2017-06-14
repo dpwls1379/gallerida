@@ -24,9 +24,9 @@ pro_info 	varchar2(4000) 	not null,
 pro_image 	varchar2(20) 	default 'default.jpg',
 pro_date 	date 			not null,
 pro_count 	number 			not null,
-pro_cell 	number 			default 0
+pro_sell 	number 			default 0
 );
-
+alter table Gproduct rename column pro_cell to pro_sell;
 create table Gboardo(
 bo_num 		number 			primary key,
 pro_num 	number 			references Gproduct(pro_num),

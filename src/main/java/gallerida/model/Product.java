@@ -13,7 +13,7 @@ public class Product {
 	private String pro_image;
 	private Date pro_date;
 	private int pro_count;
-	private int pro_cell;
+	private int pro_sell;
 	
 	
 	public int getPro_num() {
@@ -71,10 +71,10 @@ public class Product {
 		this.pro_count = pro_count;
 	}
 	public int getPro_cell() {
-		return pro_cell;
+		return pro_sell;
 	}
-	public void setPro_cell(int pro_cell) {
-		this.pro_cell = pro_cell;
+	public void setPro_cell(int pro_sell) {
+		this.pro_sell = pro_sell;
 	}
 	
 	
