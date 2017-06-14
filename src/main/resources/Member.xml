@@ -11,7 +11,7 @@
 		<result property="tel" column="tel" />
 		<result property="email" column="email" />
 		<result property="gender" column="gender" />
-		<result property="birthday" column="birthday" />
+		<result property="birthday" column="birthday"/>
 	</resultMap>
 	
 	
