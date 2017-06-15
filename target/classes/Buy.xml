@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="memberns">
+<mapper namespace="buyns">
 	<!-- Use type aliases to avoid typing the full classname every time. -->
-	<resultMap id="memberResult" type="member">
+	<resultMap id="buyResult" type="buy">
+		<result property="buy_num" column="buy_num" />
+		<result property="buy_addr" column="buy_addr" />
+		<result property="buy_memo" column="buy_memo" />
+		<result property="buy_date" column="buy_date" />
+		<result property="pro_num" column="pro_num" />
+		<result property="ct_num" column="ct_num" />
 		<result property="id" column="id" />
-		<result property="pass" column="pass" />
-		<result property="name" column="name" />
-		<result property="addr" column="addr" />
-		<result property="tel" column="tel" />
-		<result property="email" column="email" />
-		<result property="gender" column="gender" />
-		<result property="birthday" column="birthday"/>
 	</resultMap>
 	
 	
