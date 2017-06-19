@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="boardons">
+<mapper namespace="gboardons">
 	<!-- Use type aliases to avoid typing the full classname every time. -->
-	<resultMap id="boardoResult" type="boardo">
+	<resultMap id="gboardoResult" type="gboardo">
 		<result property="bo_num" column="bo_num" />
 		<result property="pro_num" column="pro_num" />
 		<result property="id" column="id" />

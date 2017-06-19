@@ -8,7 +8,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-		//location.href = "list";
+		location.href = "productList.do";
 	</script>
 </body>
 </html>
