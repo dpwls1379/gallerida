@@ -4,21 +4,21 @@
 <configuration>
 	
 	<typeAliases>
-		<typeAlias alias="member" type="gallerida.model.Member" />
-		<typeAlias alias="product" type="gallerida.model.Product" />
-		<typeAlias alias="boardo" type="gallerida.model.Boardo" />
-		<typeAlias alias="boardx" type="gallerida.model.Boardx" />
-		<typeAlias alias="cart" type="gallerida.model.Cart" />
-		<typeAlias alias="buy" type="gallerida.model.Buy" />
+		<typeAlias alias="member" type="gallerida.model.GMember" />
+		<typeAlias alias="product" type="gallerida.model.GProduct" />
+		<typeAlias alias="boardo" type="gallerida.model.GBoardo" />
+		<typeAlias alias="boardx" type="gallerida.model.GBoardx" />
+		<typeAlias alias="cart" type="gallerida.model.GCart" />
+		<typeAlias alias="buy" type="gallerida.model.GBuy" />
 	</typeAliases>
 	
 	<mappers>
-		<mapper resource="Member.xml" />
-		<mapper resource="Boardo.xml" />
-		<mapper resource="Boardx.xml" />
-		<mapper resource="Product.xml" />
-		<mapper resource="Cart.xml" />
-		<mapper resource="Buy.xml" />
+		<mapper resource="GMember.xml" />
+		<mapper resource="GBoardo.xml" />
+		<mapper resource="GBoardx.xml" />
+		<mapper resource="GProduct.xml" />
+		<mapper resource="GCart.xml" />
+		<mapper resource="GBuy.xml" />
 	</mappers>
 	
 </configuration>

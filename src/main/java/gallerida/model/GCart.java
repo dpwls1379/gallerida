@@ -1,6 +1,6 @@
 package gallerida.model;
 
-public class Cart {
+public class GCart {
 	private int ct_num;
 	private String ct_image;
 	private int ct_count;

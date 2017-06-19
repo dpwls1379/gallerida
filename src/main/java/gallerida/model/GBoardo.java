@@ -2,7 +2,7 @@ package gallerida.model;
 
 import java.sql.Date;
 
-public class Boardo {
+public class GBoardo {
 	
 	private int bo_num;
 	private int pro_num;

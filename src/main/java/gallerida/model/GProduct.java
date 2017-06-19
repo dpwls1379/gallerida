@@ -2,7 +2,7 @@ package gallerida.model;
 
 import java.sql.Date;    
 
-public class Product {
+public class GProduct {
 	
 	private int pro_num;
 	private String pro_cate;

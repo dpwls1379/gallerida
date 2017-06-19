@@ -2,7 +2,7 @@ package gallerida.model;
 
 import java.sql.Date;
 
-public class Buy {
+public class GBuy {
 	private int buy_num;
 	private String buy_addr;
 	private String buy_memo;
