@@ -29,7 +29,7 @@ public class GProductController {
 		int currentPage = Integer.parseInt(pageNum);
 
 		// int total=bs.getTotal();
-		int total = gps.getTotal(gproduct);
+		int total = gps.getTotal();//(gproduct);
 
 		int startRow = (currentPage - 1) * rowPerPage + 1;
 		int endRow = startRow + rowPerPage - 1;

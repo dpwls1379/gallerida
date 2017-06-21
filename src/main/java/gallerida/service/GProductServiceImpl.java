@@ -13,9 +13,9 @@ public class GProductServiceImpl implements GProductService {
 	private GProductDao gpd;
 
 	@Override
-	public int getTotal(GProduct gproduct) {
+	public int getTotal() { //GProduct gproduct
 		// TODO Auto-generated method stub
-		return gpd.getTotal(gproduct);
+		return gpd.getTotal();
 	}
 
 	@Override

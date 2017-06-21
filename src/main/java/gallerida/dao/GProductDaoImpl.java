@@ -13,7 +13,7 @@ public class GProductDaoImpl implements GProductDao {
 	private SqlSessionTemplate st;
 
 	@Override
-	public int getTotal(GProduct gproduct) {
+	public int getTotal(){    //(GProduct gproduct)
 		// TODO Auto-generated method stub
 		return st.selectOne("gproductns.getTotal");
 	}
