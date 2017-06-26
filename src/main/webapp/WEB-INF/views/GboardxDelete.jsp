@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,14 +9,22 @@
 </head>
 <body>
 <c:if test="${result>0 }">
-	<script type="text/javascript">
-		alert("작성완료");
-		location.href="GboardxList.do";
-	</script>
+	<c:if test="${bx_categ=='notice' }">
+		<script type="text/javascript">
+			alert("삭제 성공");
+			location.href="GboardxList.do";
+		</script>
+	</c:if>
+	<c:if test="${bx_categ=='qna' }">
+		<script type="text/javascript">
+			alert("삭제 성공");
+			location.href="GboardxList2.do";
+		</script>
+	</c:if>
 </c:if>
 <c:if test="${result<=0 }">
 	<script type="text/javascript">
-		alert("작성 실패");
+		alert("삭제 실패");
 		history.go(-1);
 	</script>
 </c:if>

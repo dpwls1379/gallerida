@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gproduct">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="gproductResult" type="gproduct">
+		<result property="pro_num" column="pro_num" />		
+		<result property="pro_cate" column="pro_cate" />
+		<result property="pro_name" column="pro_name" />					
+		<result property="pro_price" column="pro_price" />
+		<result property="pro_sale" column="pro_sale" />	
+		<result property="pro_info" column="pro_info" />
+		<result property="pro_image" column="pro_image" />		
+		<result property="pro_date" column="pro_date" />
+		<result property="pro_count" column="pro_count" />
+		<result property="pro_sell" column="pro_sell" />
+	</resultMap>
+	<insert id="insert" parameterType="gproduct">
+		<selectKey keyProperty="pro_num" order="BEFORE" resultType="int">
+			select nvl(max(pro_num),0)+1 from Gproduct
+		</selectKey>
+		insert into Gproduct values (#{pro_num},#{pro_cate},#{pro_name},#{pro_price},#{pro_sale},#{pro_info},#{pro_image},sysdate,#{pro_count},0,0)
+	</insert>
+	<select id="list" resultMap="gproductResult">
+		select * from Gproduct order by pro_num
+	</select>
+	<select id="pdList" resultMap="gproductResult">
+		<![CDATA[
+			select * from (select * from Gproduct order by pro_sell desc) where rowNum <= 5
+		]]>
+	</select>
+	<select id="pdList2" resultMap="gproductResult">
+		<![CDATA[
+			select * from (select * from Gproduct order by pro_read desc) where rowNum <= 5
+		]]>
+	</select>
+	<select id="pdList3" resultMap="gproductResult">
+		<![CDATA[
+			select * from (select * from (select pro_num, avg(bo_star) avg from Gboardo group by pro_num) natural join gproduct order by avg desc) where rowNum <=5
+		]]>
+	</select>
+	<select id="pdContent" parameterType="int" resultType="gproduct">
+		select * from Gproduct where pro_num=#{pro_num}
+	</select>
+	<delete id="delete" parameterType="int">
+		delete from Gproduct where pro_num=#{pro_num}
+	</delete>
+	<update id="update" parameterType="gproduct">
+		update Gproduct set pro_cate=#{pro_cate},pro_name=#{pro_name},pro_price=#{pro_price},pro_sale=#{pro_sale},pro_info=#{pro_info},pro_image=#{pro_image},pro_count=#{pro_count} where pro_num=#{pro_num}
+	</update>
+	<update id="readcount" parameterType="int">
+		update Gproduct set pro_read = pro_read+1 where pro_num=#{pro_num}
+	</update>
+	<select id="search" parameterType="String" resultMap="gproductResult">
+		select * from Gproduct where pro_name like '%'||#{search}||'%'
+	</select>
+</mapper>

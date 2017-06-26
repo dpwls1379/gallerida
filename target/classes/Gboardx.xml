@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gboardx">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="gboardxResult" type="gboardx">
+		<result property="bx_num" column="bx_num" />
+		<result property="id" column="id" />
+		<result property="bx_subject" column="bx_subject" />
+		<result property="bx_content" column="bx_content" />
+		<result property="bx_categ" column="bx_categ" />
+		<result property="bx_date" column="bx_date" />
+		<result property="bx_read" column="bx_read" />
+		<result property="bx_del" column="bx_del" />
+		<result property="bn_num" column="bn_num" />
+		<result property="bq_num" column="bq_num" />
+	</resultMap>
+	<insert id="insert" parameterType="gboardx">
+		<selectKey keyProperty="bx_num" order="BEFORE" resultType="int">
+			select nvl(max(bx_num),0)+1 from Gboardx
+		</selectKey> 
+		insert into Gboardx values (#{bx_num},#{bx_subject},#{bx_content},#{bx_categ},sysdate,0,'n',#{id},bn_num.nextval,#{bq_num})
+	</insert>
+		<insert id="insert2" parameterType="gboardx">
+		<selectKey keyProperty="bx_num" order="BEFORE" resultType="int">
+			select nvl(max(bx_num),0)+1 from Gboardx
+		</selectKey>
+		insert into Gboardx values (#{bx_num},#{bx_subject},#{bx_content},#{bx_categ},sysdate,0,'n',#{id},#{bn_num},bq_num.nextval)
+	</insert>
+	
+	
+	<select id="list" resultMap="gboardxResult">
+		select * from Gboardx where bx_categ='notice' order by bx_date desc
+	</select>
+	<select id="list2" resultMap="gboardxResult">
+		select * from Gboardx where bx_categ='qna' order by bx_date desc
+	</select>
+	
+	
+	<select id="content" parameterType="int" resultType="gboardx">
+		select * from Gboardx where bx_num=#{bx_num}
+	</select>
+	<update id="update" parameterType="gboardx">
+		update Gboardx set bx_subject=#{bx_subject},bx_content=#{bx_content} where bx_num=#{bx_num}
+	</update>
+	<update id="readcount" parameterType="int">
+		update Gboardx set bx_read=bx_read+1 where bx_num=#{bx_num}
+	</update>
+	<update id="delete" parameterType="int">
+		update Gboardx set bx_del='y' where bx_num=#{bx_num}
+	</update>
+	<select id="search" parameterType="String" resultMap="gboardxResult">
+		select * from Gboardx where ${serc} like '%'||#{serct}||'%' and bx_categ='notice'
+	</select>
+	<select id="search2" parameterType="String" resultMap="gboardxResult">
+		select * from Gboardx where ${serc} like '%'||#{serct}||'%' and bx_categ='qna'
+	</select>
+	<select id="listn" resultMap="gboardxResult">
+		<![CDATA[
+			select * from (select * from Gboardx where bx_categ='notice' order by bx_date desc) where rowNum<=5
+		]]>
+	</select>
+	<select id="listq" resultMap="gboardxResult">
+		<![CDATA[
+			select * from (select * from Gboardx where bx_categ='qna' order by bx_date desc) where rowNum<=5
+		]]>
+	</select>
+</mapper>

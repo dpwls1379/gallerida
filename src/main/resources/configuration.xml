@@ -2,23 +2,18 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	
 	<typeAliases>
-		<typeAlias alias="gmember" type="gallerida.model.GMember" />
-		<typeAlias alias="gproduct" type="gallerida.model.GProduct" />
-		<typeAlias alias="gboardo" type="gallerida.model.GBoardo" />
-		<typeAlias alias="gboardx" type="gallerida.model.GBoardx" />
-		<typeAlias alias="gcart" type="gallerida.model.GCart" />
-		<typeAlias alias="gbuy" type="gallerida.model.GBuy" />
+		<typeAlias alias="gboardx" type="project.model.Gboardx" />
+		<typeAlias alias="gboardo" type="project.model.Gboardo" />
+		<typeAlias alias="greplyo" type="project.model.Greplyo" />
+		<typeAlias alias="greplyx" type="project.model.Greplyx" />
+		<typeAlias alias="gproduct" type="project.model.Gproduct" />
 	</typeAliases>
-	
 	<mappers>
-		<mapper resource="GMember.xml" />
-		<mapper resource="GBoardo.xml" />
-		<mapper resource="GBoardx.xml" />
-		<mapper resource="GProduct.xml" />
-		<mapper resource="GCart.xml" />
-		<mapper resource="GBuy.xml" />
+		<mapper resource="Gboardx.xml" />
+		<mapper resource="Gboardo.xml" />
+		<mapper resource="Greplyo.xml" />
+		<mapper resource="Greplyx.xml" />
+		<mapper resource="Gproduct.xml" />
 	</mappers>
-	
 </configuration>

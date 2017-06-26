@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="greplyo">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="greplyoResult" type="greplyo">
+		<result property="reo_num" column="reo_num" />		
+		<result property="reo_content" column="reo_content" />
+		<result property="reo_del" column="reo_del" />					
+		<result property="reo_date" column="reo_date" />
+		<result property="id" column="id" />	
+		<result property="bo_num" column="bo_num" />
+	</resultMap>
+	<insert id="insert" parameterType="greplyo">
+		<selectKey keyProperty="reo_num" order="BEFORE" resultType="int">
+			select nvl(max(reo_num),0)+1 from Greplyo
+		</selectKey>
+		insert into Greplyo values (#{reo_num},#{reo_content},sysdate,'n',#{bo_num},#{id})
+	</insert>
+	<select id="list" parameterType="int" resultMap="greplyoResult">
+		select * from Greplyo where bo_num=#{bo_num}
+	</select>
+	<update id="update" parameterType="greplyo">
+		update Greplyo set id=#{id}, reo_content=#{reo_content} where reo_num=#{reo_num}
+	</update>
+	<update id="delete" parameterType="int">
+		update Greplyo set reo_del='y' where reo_num=#{reo_num}
+	</update>
+</mapper>

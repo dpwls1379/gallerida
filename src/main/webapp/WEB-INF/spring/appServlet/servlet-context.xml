@@ -25,7 +25,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="gallerida" />
+	<context:component-scan base-package="project" />
 	
 	
 	

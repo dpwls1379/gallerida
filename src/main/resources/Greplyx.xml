@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="greplyx">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<resultMap id="greplyxResult" type="greplyx">
+		<result property="rex_num" column="rex_num" />		
+		<result property="rex_content" column="rex_content" />
+		<result property="rex_date" column="rex_date" />
+		<result property="rex_del" column="rex_del" />
+		<result property="id" column="id" />	
+		<result property="bx_num" column="bx_num" />
+	</resultMap>
+	<insert id="insert" parameterType="int">
+		<selectKey keyProperty="rex_num" order="BEFORE" resultType="int">
+			select nvl(max(rex_num),0)+1 from Greplyx
+		</selectKey>
+		insert into Greplyx values (#{rex_num},#{rex_content},sysdate,'n',#{id},#{bx_num})
+	</insert>
+	<select id="list" parameterType="int" resultMap="greplyxResult">
+		select * from Greplyx where bx_num=#{bx_num}
+	</select>
+	<update id="update" parameterType="greplyx">
+		update Greplyx set id=#{id},rex_content=#{rex_content} where rex_num=#{rex_num}
+	</update>
+	<update id="delete" parameterType="int">
+		update Greplyx set rex_del='y' where rex_num=#{rex_num}
+	</update>
+</mapper>

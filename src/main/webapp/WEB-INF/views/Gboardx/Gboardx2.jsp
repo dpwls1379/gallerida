@@ -11,7 +11,7 @@
 <c:if test="${result>0 }">
 	<script type="text/javascript">
 		alert("작성완료");
-		location.href="GboardxList.do";
+		location.href="GboardxList2.do";
 	</script>
 </c:if>
 <c:if test="${result<=0 }">
