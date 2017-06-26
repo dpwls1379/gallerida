@@ -8,7 +8,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-		location.href = "first.do";
+		location.href = "firstindex.do";
 	</script>
 </body>
 </html>

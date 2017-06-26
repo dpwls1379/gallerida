@@ -14,6 +14,7 @@
 		<result property="pro_date" column="pro_date" />
 		<result property="pro_count" column="pro_count" />
 		<result property="pro_sell" column="pro_sell" />
+		<result property="pro_read" column="pro_read" />
 	</resultMap>
 	<insert id="insert" parameterType="gproduct">
 		<selectKey keyProperty="pro_num" order="BEFORE" resultType="int">

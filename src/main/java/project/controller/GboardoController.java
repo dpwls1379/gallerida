@@ -17,10 +17,10 @@ public class GboardoController {
 	@Autowired
 	private GboardoService go;
 	
-	@RequestMapping("first")
+	@RequestMapping("firstindex")
 	public String first(){
 		
-		return "index";
+		return "first";
 	}
 	
 	
