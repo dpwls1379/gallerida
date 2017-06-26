@@ -48,7 +48,9 @@
 			<td>${list.pro_sell }</td>
 			<td>
 				<a href="GproductUpdateForm.do?pro_num=${list.pro_num }">수정</a>
-				<button onclick="return delchk()"><a href="GproductDelete.do?pro_num=${list.pro_num}">삭제</a></button>
+				<button onclick="return delchk()">
+					<a href="GproductDelete.do?pro_num=${list.pro_num}">삭제</a>
+				</button>
 			</td>
 		</tr>		
 	</c:forEach>
